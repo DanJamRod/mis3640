@@ -2,7 +2,7 @@ print("Daniel James Rodgers \n")
 
 
 # Session 1 HW
-print("  Session 1 HW")
+print(f"     Session 1 HW")
 
 time = 42*60 + 42 # Compute the amount of seconds in 42 minutes and 42 secons
 print(f"There are {time} seconds in 42 minutes and 42 seconds")
@@ -15,7 +15,7 @@ print(f"If you run 10km in 42 minutes and 42 seconds, your average speed is {spe
 
 
 #Session 2 HW
-print ("  Session 2 HW")
+print(f"     Session 2 HW")
 
 pi = 3.1415926 # Define variable pi
 volume = 4*pi*5**3/3 # Compute volume of sphere with radius 5
