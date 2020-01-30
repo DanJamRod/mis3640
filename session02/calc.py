@@ -1,10 +1,10 @@
-print(f"Daniel James Rodgers \n")
+print(f"Daniel James Rodgers HW1 & HW2 \n")
 
 
 # Session 1 HW
-print(f"     Session 1 HW")
+print(f"     HW1")
 
-time = 42*60 + 42 # Compute the amount of seconds in 42 minutes and 42 secons
+time = 42*60 + 42 # Compute the amount of seconds in 42 minutes and 42 seconds
 print(f"There are {time} seconds in 42 minutes and 42 seconds")
 
 distance = 10/1.61 # Compute how many miles in 10KM
@@ -15,7 +15,7 @@ print(f"If you run 10km in 42 minutes and 42 seconds, your average speed is {spe
 
 
 #Session 2 HW
-print(f"     Session 2 HW")
+print(f"     HW2")
 
 pi = 3.1415926 # Define variable pi
 volume = 4*pi*5**3/3 # Compute volume of sphere with radius 5
@@ -32,9 +32,9 @@ time_1 = 1 * (8 + 15/60) # Time (minutes) of first stint of 1 mile at 8m15 per m
 time_2 = 3 * (7 + 12/60) # Time (minutes) of second stint of 3 miles at 7m12 per mile
 time_3 = time_1 # Same as Time_1, Time (minutes) of third stint of 1 mile at 8m15 per mile
 finish_time = start_time+time_1+time_2+time_3 # Finish time (minutes) after midnight
-finish_hour = ((finish_time / 60) - 0.5) % 24 # Hours after midnight of finish time, -0.5 so for any value of minutes remainder the hour value rounds down when formatted :.0f, modulo 24 keeps the time to a 24h clock  
-finish_minute = (start_time+time_1+time_2+time_3) % 60 # Minutes after the hour of finish time, time in minutes modulo 60
-print(f"If I leave my house at 6:52 and run 1 mile at an easy pace (8:15 per mile), then 3 miles at tempo (7:12 per mile) and 1 mile at easy pace again, I get home for breakfast at {finish_hour:.0f}:{finish_minute:.0f}")
+finish_hour = int((finish_time / 60) % 24) # Hours after midnight of finish time, modulo 24 keeps the time to a 24h clock  
+finish_minute = int((start_time+time_1+time_2+time_3) % 60) # Minutes after the hour of finish time, time in minutes modulo 60
+print(f"If I leave my house at 06:52 and run 1 mile at an easy pace (8:15 per mile), then 3 miles at tempo (7:12 per mile) and 1 mile at easy pace again, I get home for breakfast at {finish_hour:02d}:{finish_minute:02d}")
 
 rise = (89/82 - 1)*100 # Percent rise from 82 to 89
 print(f"If my average grade rises from 82 to 89, the percentage increase is {rise:.1f}%")
