@@ -45,8 +45,17 @@ def circle(t, r):
     """
     arc(t, r, 360)
 
-def main():    
-    t = turtle.Turtle()
-    turtle.mainloop()
-if __name__ == "__main__":
-    main()
+def move(t, x, y):
+    """
+    Move Turtle (t) forward (x, y) units without leaving a trail.
+    Leaves the pen down.
+    """
+    t.pu()
+    t.setpos(x, y)
+    t.pd()
+
+# def main():    
+#     t = turtle.Turtle()
+#     turtle.mainloop()
+# if __name__ == "__main__":
+#     main()
