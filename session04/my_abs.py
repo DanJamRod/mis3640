@@ -1,6 +1,10 @@
 print(f"Daniel James Rodgers HW4a\n")
 
 print(f"my_abs")
+"""
+number:an integer or a floating number
+return the absolute value of a number
+"""
 
 def my_abs(x):
     if isinstance(x,(bool)): # Special handling as bool is a sub class of int. 
