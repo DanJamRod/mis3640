@@ -45,6 +45,13 @@ def circle(t, r):
     """
     arc(t, r, 360)
 
+def turn(t, angle):
+    """
+    Turns the turtle anti-clockwise by given angle (degrees)
+    t is a turtle
+    """
+    polyline(t, 1, 0, angle)
+
 def move(t, x, y):
     """
     Move Turtle (t) forward (x, y) units without leaving a trail.
