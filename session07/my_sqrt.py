@@ -1,6 +1,9 @@
 import math
 
 def my_sqrt(a):
+    """
+    Returns a**0.5
+    """
     if isinstance(a,bool) or not isinstance(a,(float,int)):
         return (f"'{a}' is a {type(a)}, please enter a number")
     elif a < 0:
@@ -28,6 +31,9 @@ def my_sqrt(a):
 # print(my_sqrt(-25))
 
 def test_my_sqrt(*a):
+    """
+    Creates a table comparing output of my_sqrt(a) and math.sqrt(a)
+    """
     print(f"\na                 my_sqrt(a)        math.sqrt(a)      difference")
     print(f"----------------  ----------------  ----------------  ----------------")
     for a in a:
