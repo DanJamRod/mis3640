@@ -21,6 +21,6 @@ def guess():
             print (f"Well done! You guessed my number in {count} guesses")
             break
     if a != number:
-        print(f"Sorry, but you you didn't manage to guess my number! It was {number}")
+        print(f"Sorry, but you you didn't manage to guess my number in 6 guesses! It was {number}")
 
 guess()
