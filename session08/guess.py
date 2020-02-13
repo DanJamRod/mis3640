@@ -1,6 +1,8 @@
 import random
 
 def guess():
+    """ Runs a game where player has to guess a random integer between 1 and 20 in 6 guesses
+    """
     print(f"Hello! What is your name?")
     name = input()
     number = random.randint(1,20)
