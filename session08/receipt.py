@@ -22,4 +22,3 @@ def receipt(*item):
 receipt("bananas", "rice", "paprika", "potato chips")
 # receipt("bananas", "rice", "paprika")
 # receipt("bananas", "rice", "paprika", "potato chips", "twinnings earl grey teabags")
-print(ord(" "))
