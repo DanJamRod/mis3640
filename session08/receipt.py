@@ -15,10 +15,9 @@ def receipt(*item):
     for i in range(len(item)):
         total += cost(item[i])
         print(f"{item[i]:{8+longest}s}${cost(item[i]):>6.2f}")
-    print(f"-"*(15+longest))
-    space = " "
-    print(f"Total {space*(2+longest)}${total:>6.2f}")
+        space = " "
+    return f"-"*(15+longest) + f"\n" + f"Total {space*(2+longest)}${total:>6.2f}"
 
-receipt("bananas", "rice", "paprika", "potato chips")
-# receipt("bananas", "rice", "paprika")
-# receipt("bananas", "rice", "paprika", "potato chips", "twinnings earl grey teabags")
+print(receipt("bananas", "rice", "paprika", "potato chips"))
+# print(receipt("bananas", "rice", "paprika"))
+# print(receipt("bananas", "rice", "paprika", "potato chips", "twinnings earl grey teabags"))
