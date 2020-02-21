@@ -93,24 +93,33 @@ def find_words_only_use_planets():
 
 # print('Number of words that use only letters from "planet" is', find_words_only_use_planets())
 
-
 def uses_all(word, required):
     """
     takes a word and a string of required letters, and that returns True if
     the word uses all the required letters at least once.
     """
-    pass
+    flag = True
+    for letter in required:
+            if letter not in word:    
+                flag = False
+    return flag
 
-
-# please write test cases
+# print(uses_all("hello", "helo"))
+# print(uses_all("hello", "h"))
+# print(uses_all("hello", "world"))
 
 
 def find_words_using_all_vowels():
     """
     return the number of the words that use all the vowel letters
     """
-    pass
-
+    f = open('session09/words.txt')
+    num_all_vowels = 0
+    for word in f:
+        if uses_all(word.strip(),"aeiou") == True:
+            num_all_vowels += 1
+            print(word.strip()) 
+    return num_all_vowels
 
 # print('The number of words that use all the vowels:', find_words_using_all_vowels())
 
@@ -120,21 +129,29 @@ def is_abecedarian(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    flag = True
+    for i in range(len(word.strip())-1):
+        if ord(word[i]) > ord(word[i+1]):
+            flag = False
+    return flag
 
-
-# print(is_abecedarian('abs'))
-# print(is_abecedarian('college'))
+# print(is_abecedarian('abcdef'))
+# print(is_abecedarian('abcdefa'))
 
 
 def find_abecedarian_words():
     """
     returns the number of abecedarian words
     """
-    pass
+    f = open('session09/words.txt')
+    num_abecedarian = 0
+    for word in f:
+        if is_abecedarian(word.strip()) == True:
+            num_abecedarian += 1
+            print(word.strip()) 
+    return num_abecedarian
 
-
-# print(find_abecedarian_words())
+# print('The number of words that are abecedarian:', find_abecedarian_words())
 
 
 def is_abecedarian_using_recursion(word):
@@ -142,10 +159,15 @@ def is_abecedarian_using_recursion(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
-
+    if ord(word[0]) > ord(word[1]):
+        return False
+    word = word[1:]
+    if len(word) == 1:
+        return True
+    return is_abecedarian_using_recursion(word)
 
 # print(is_abecedarian_using_recursion('abcdef'))
+# print(is_abecedarian_using_recursion('abcdefa'))
 
 
 def is_abecedarian_using_while(word):
@@ -153,4 +175,22 @@ def is_abecedarian_using_while(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    pass
+    flag = True
+    i = 0
+    while i < len(word.strip())-2:
+        i += 1
+        if ord(word[i]) > ord(word[i+1]):
+            flag = False
+    return flag
+
+# print(is_abecedarian_using_while('abcdef'))
+# print(is_abecedarian_using_while('abcdefa'))
+
+# import timeit
+# word = "abcdefa"
+# print(f"The time taken for is_abecedarian('abcdefa') <for-loop>      to return 1 million times is {timeit.timeit('is_abecedarian(word)','from __main__ import is_abecedarian, word', number=1000000)}")
+# print(f"The time taken for is_abecedarian_using_recursion('abcdefa') to return 1 million times is {timeit.timeit('is_abecedarian_using_recursion(word)','from __main__ import is_abecedarian_using_recursion, word', number=1000000)}")
+# print(f"The time taken for is_abecedarian_using_while('abcdefa')     to return 1 million times is {timeit.timeit('is_abecedarian_using_while(word)','from __main__ import is_abecedarian_using_while, word', number=1000000)}")
+# # For-loop ~ 1.1s
+# # Recursion ~ 1.6s (+45%) 
+# # While ~ 1.4s (+27%)
