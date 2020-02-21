@@ -11,10 +11,12 @@ def triple_double(word):
 # print(triple_double("abbcdde"))
 
 def cartalk():
+    """ List any words in words.txt with 3 consecutive double letters, and the count
+    """
     f = open('session09/words.txt')
     triple_double_words = 0
     for word in f:
-        if triple_double(word.strip()) == True :
+        if triple_double(word.strip()) == True:
             triple_double_words += 1
             print(word.strip()) 
     return triple_double_words
