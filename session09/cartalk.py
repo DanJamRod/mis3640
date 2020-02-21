@@ -1,24 +1,22 @@
-# See triple_letters.py for function showing that there are no triple letter sequence words in words.txt, or the function below would not work 
-
-def how_many_doubles(word):
-    """ Calculates how many double letter sequences in a string
+def triple_double(word):
+    """ Boolean for whether there are 3 consecutive double letters
     """
-    sum_double_letters = 0
-    for i in range (len(word)-1):
-        if word[i] == word[i+1]:
-            sum_double_letters += 1
-    return sum_double_letters
+    triple_double = False
+    for i in range (len(word)-5):
+        if word[i] == word[i+1] and word[i+2] == word[i+3] and word[i+4] == word[i+5] :
+            triple_double = True
+    return triple_double
 
-# print(how_many_doubles("aabbccddee"))
-# print(how_many_doubles("abbcdde"))
+# print(triple_double("aabbccddee"))
+# print(triple_double("abbcdde"))
 
 def cartalk():
     f = open('session09/words.txt')
-    double_letter_words = 0
+    triple_double_words = 0
     for word in f:
-        if how_many_doubles(word.strip()) >= 3 :
-            double_letter_words += 1
+        if triple_double(word.strip()) == True :
+            triple_double_words += 1
             print(word.strip()) 
-    return double_letter_words
+    return triple_double_words
 
 print(cartalk())
