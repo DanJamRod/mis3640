@@ -154,4 +154,4 @@ def get_current_temp():
 print(get_current_temp())
 
 # Expected output:
-# maybe 60? -> Only use civilised units :)
+# maybe 60? << No no no, only use civilised units :)
