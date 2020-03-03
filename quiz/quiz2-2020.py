@@ -52,23 +52,20 @@ def call_simulation(names, num_of_calls):
 
     Returns a dictionary of name: positive integer pairs
     """
-    names = NAMES_STRING.split(",")
+    names = NAMES_STRING.split(", ")
     d = dict()
-    print(names)
     for name in names:
         d[name] = d.get(name, 0)
     for i in range(num_of_calls):
-        d[random.choice(names).strip()] += 1
-
-# Ran out of time
-        
+        d[random.choice(names)] += 1
+    return (d)
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
 
-# print(call_simulation(NAMES_STRING, 100))
+print(call_simulation(NAMES_STRING, 100))
 ## Expected output:
 ## {'Daniel': 6, 'Alvie': 4, 'Ivy': 10, 'Kenzi': 10, 'Eli': 4, 'Queenie': 9, 'Catherine': 8, 'Zoe': 4, 'Sean': 3, 'Christian': 5, 'Grace': 7, 'Angela': 1, 'Takaki': 5, 'Andrew': 4, 'Ray': 5, 'Rumeer': 6, 'Nathan': 6, 'Lucas': 2, 'Rachel': 1}
 
@@ -89,14 +86,15 @@ def print_hist(data):
     to the positive integer. The rows should be printed in key order.
     No return is required.
     """
-    pass
+    for name in roster_dict:
+        print(name + ": " + "*"*roster_dict[name])
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# roster_dict = call_simulation(NAMES_STRING, 100)
-# print_hist(roster_dict)
+roster_dict = call_simulation(NAMES_STRING, 100)
+print_hist(roster_dict)
 
 ## Expected output:
 # Daniel: ******
