@@ -50,4 +50,5 @@ def anagram(*str):
     for anagram_list in sorted(d, key=d.get, reverse=True): # Orders dictionary, and prints anagrams 
         print(anagram_list)
     
-anagram("deltas", "retainers", "generating", "resmelts")
+anagram("felt", "tar")
+# anagram("deltas", "retainers", "generating", "resmelts")
